@@ -42,11 +42,10 @@
 
 	<action-validate name="action.validate.capacity">
 		<error message="Registration is full :). Sorry for Inconvience"
-			if="event.totalEntry &lt; event.capacity" />
+			if="event.totalEntry &gt; event.capacity" />
 	</action-validate>
 	
 	<action-record name="action.record.event.registration.set.amount.value" model="com.axelor.event.db.EventRegistration">
 	<field name="amount" expr="eval: event.eventFees"/>
-	</action-record>
-
+	</action-record>	
 </object-views>

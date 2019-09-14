@@ -39,6 +39,16 @@
 		<view type="grid" name="address-grid" />
 		<view type="form" name="address-form" />
 	</action-view>
+	
+	<menuitem name="event-root-discount"
+		title="Discount" parent="event-root"
+		action="action.event.view.discount" />
+	<action-view name="action.event.view.discount"
+		title="Discount"
+		model="com.axelor.event.db.Discount">
+		<view type="grid" name="discount-grid" />
+		<view type="form" name="discount-form" />
+	</action-view>
 
 </object-views>
 

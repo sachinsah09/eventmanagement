@@ -26,7 +26,7 @@
 		<integer name="totalEntry" title="Total Entry" readonly="true" />
 		<decimal name="amountCollected" title="Amount Collected"
 			readonly="true" />
-		<decimal name="totatDiscount" title="Total Dicsount"
+		<decimal name="totatDiscount" title="Total Discount"
 			readonly="true" />
 	</entity>
 </domain-models>

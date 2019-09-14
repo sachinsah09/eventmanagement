@@ -20,10 +20,10 @@
 
 	</grid>
 
-	<form name="event-form" title="Event-Form"
+	<form name="event-form"  title="Event-Form"
 		model="com.axelor.event.db.Event">
 		<panel title="Fill all Details">
-			<field name="reference" />
+			<field name="reference" onChange="action.event.count.total.entry"/>
 			<field name="startDate" />
 			<field name="endDate" />
 			<field name="venue" />
@@ -77,5 +77,11 @@
 		eventStop="endDate" eventLength="1">
 		<field name="reference" />
 	</calendar>
-
+	
+	
+	<action-record
+		name="action.event.count.total.entry"
+		model="com.axelor.event.db.Event">
+		<field name="totalEntry" expr="eval: (__ref__ instanceof Event).size()" />
+	</action-record>
 </object-views>

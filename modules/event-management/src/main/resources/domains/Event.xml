@@ -27,6 +27,6 @@
 		<decimal name="amountCollected" title="Amount Collected"
 			readonly="true" />
 		<decimal name="totatDiscount" title="Total Dicsount"
-			readonly="true"  />
+			readonly="true" />
 	</entity>
 </domain-models>

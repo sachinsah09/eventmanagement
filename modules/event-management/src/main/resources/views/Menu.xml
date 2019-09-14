@@ -18,5 +18,27 @@
 		<view type="cards" name="event-cards" />
 		<view type="calendar" name="event-calendar" />
 	</action-view>
+
+	<menuitem name="event-root-event-registration"
+		title="Event Registration" parent="event-root"
+		action="action.event.view.event.registration" />
+	<action-view name="action.event.view.event.registration"
+		title="Event Registration"
+		model="com.axelor.event.db.EventRegistration">
+		<view type="grid" name="event-registration-grid" />
+		<view type="form" name="event-registration-form" />
+	</action-view>
+
+
+	<menuitem name="event-root-address"
+		title="Address" parent="event-root"
+		action="action.event.view.address" />
+	<action-view name="action.event.view.address"
+		title="address"
+		model="com.axelor.event.db.Address">
+		<view type="grid" name="address-grid" />
+		<view type="form" name="address-form" />
+	</action-view>
+
 </object-views>
 

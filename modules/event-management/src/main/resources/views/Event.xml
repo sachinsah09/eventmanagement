@@ -20,16 +20,20 @@
 
 	</grid>
 
-	<form name="event-form"  title="Event-Form"
+	<form name="event-form" title="Event-Form"
+		onLoad="action.event.total.entry"
+		onSave="action.check.validation.on.new.registration,action.check.condition.on.new.registration"
 		model="com.axelor.event.db.Event">
 		<panel title="Fill all Details">
-			<field name="reference" onChange="action.event.count.total.entry"/>
+			<field name="reference"
+				onChange="action.event.calulate.event.summary.fields" />
 			<field name="startDate" />
 			<field name="endDate" />
 			<field name="venue" />
 			<field name="registrationOpen" />
 			<field name="registrationClose" />
-			<field name="capacity" />
+			<field name="capacity"
+				onChange="action.check.condition.on.new.registration" />
 			<field name="eventFees" />
 			<field name="description" widget="html" x-lite="true" />
 		</panel>
@@ -39,8 +43,9 @@
 			<field name="discountAmount" />
 		</panel-related>
 
-		<panel-related field="eventRegistrationList" />
-		<panel sidebar="true" title="Calculated">
+		<panel-related field="eventRegistrationList"
+			onChange="action.check.validation.on.new.registration,action.check.condition.on.new.registration" />
+		<panel sidebar="true" title="Event Summary">
 			<field name="totalEntry" />
 			<field name="amountCollected" />
 			<field name="totatDiscount" />
@@ -77,11 +82,30 @@
 		eventStop="endDate" eventLength="1">
 		<field name="reference" />
 	</calendar>
-	
-	
-	<action-record
-		name="action.event.count.total.entry"
+
+	<action-method
+		name="action.event.calulate.event.summary.fields">
+		<call class="com.axelor.event.web.EventController"
+			method="calculateEventSummaryFields" />
+	</action-method>
+
+	<action-record name="action.event.total.entry"
 		model="com.axelor.event.db.Event">
-		<field name="totalEntry" expr="eval: (__ref__ instanceof Event).size()" />
+		<field name="totalEntry"
+			expr="eval: eventRegistrationList.size()" />
 	</action-record>
+
+	<action-condition
+		name="action.check.condition.on.new.registration">
+		<check field="capacity"
+			if="eventRegistrationList.size() &gt; capacity"
+			error="Increase the Capacity to register more" />
+	</action-condition>
+
+	<action-validate
+		name="action.check.validation.on.new.registration">
+		<error
+			message="Registration is full :) Check Capacity and total Entry"
+			if="eventRegistrationList.size() &gt; capacity" />
+	</action-validate>
 </object-views>

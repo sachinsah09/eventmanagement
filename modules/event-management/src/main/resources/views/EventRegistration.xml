@@ -18,12 +18,35 @@
 		title="Event-Registration-Form"
 		model="com.axelor.event.db.EventRegistration">
 		<panel title="Fill all Details">
-			<field name="event" />
+			<field name="event" onChange="action.validate.capacity,action.record.event.registration.set.amount.value"/>
 			<field name="name" />
-			<field name="email" placeholder="something@example.com" pattern="^[a-z0-9A-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9A-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,})$" />
+			<field name="email" placeholder="something@example.com"
+				pattern="^[a-z0-9A-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9A-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,})$" />
 			<field name="address" />
-			<field name="registrationDate" />
+			<field name="registrationDate"
+				onChange="action.check.validation.on.date" />
 			<field name="amount" />
 		</panel>
 	</form>
+
+	<action-validate name="action.check.validation.on.date">
+		<error
+			message="Registration date cannot be before Registration open date"
+			if="registrationDate &lt;event.registrationOpen" />
+		<error
+			message="Registartion date cannot be after Registration close date"
+			if="registrationDate &gt;event.registrationClose" />
+		<error message="Registration is full :). Sorry for Inconvience"
+			if="event.totalEntry &lt; event.capacity" />
+	</action-validate>
+
+	<action-validate name="action.validate.capacity">
+		<error message="Registration is full :). Sorry for Inconvience"
+			if="event.totalEntry &lt; event.capacity" />
+	</action-validate>
+	
+	<action-record name="action.record.event.registration.set.amount.value" model="com.axelor.event.db.EventRegistration">
+	<field name="amount" expr="eval: event.eventFees"/>
+	</action-record>
+
 </object-views>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.1.xsd">
+
+	<grid name="Event-grid" title="Event-Grid"
+		model="com.axelor.event.db.Event">
+		<field name="reference" />
+		<field name="startDate" />
+		<field name="endDate" />
+		<field name="venue" />
+		<field name="registrationOpen" />
+		<field name="registrationClose" />
+		<field name="capacity" />
+		<field name="eventFees" />
+		<field name="description" />
+		<field name="totalEntry" />
+		<field name="amountCollected" />
+		<field name="totatDiscount" />
+
+	</grid>
+
+	<form name="Event-form" title="Event-Form"
+		model="com.axelor.event.db.Event">
+		<panel title="Fill all Details">
+			<field name="reference" />
+			<field name="startDate" />
+			<field name="endDate" />
+			<field name="venue" />
+			<field name="registrationOpen" />
+			<field name="registrationClose" />
+			<field name="capacity" />
+			<field name="eventFees" />
+			<field name="description" widget="html" x-lite="true"/>
+		</panel>
+		<panel-related field="discountList"	>
+		<field name="beforeDays" />
+		<field name="discountPercent" />
+		<field name="discountAmount" />
+		</panel-related>
+		
+		<panel-related field="eventRegistrationList"/>
+		<panel sidebar="true" title="Calculated">
+			<field name="totalEntry"/>
+			<field name="amountCollected"/>
+			<field name="totatDiscount"/>
+		</panel>		
+	</form>
+</object-views>

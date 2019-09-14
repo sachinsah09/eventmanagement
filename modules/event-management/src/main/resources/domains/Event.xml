@@ -16,8 +16,8 @@
 		<datetime name="registrationOpen" title="Registration open" />
 		<datetime name="registrationClose" title="Registration close" />
 		<integer name="capacity" title="Capacity" />
-		<decimal name="eventfees" title="Event Fees" />
-		<string name="description" title="Descrption" />
+		<decimal name="eventFees" title="Event Fees" />
+		<string name="description" title="Description" />
 		<one-to-many name="discountList" title="Discount"
 			ref="com.axelor.event.db.Discount" />
 		<one-to-many name="eventRegistrationList"

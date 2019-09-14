@@ -9,12 +9,14 @@
 		tag="New Feature" tag-style="info" icon="fa-book"
 		icon-background="white" />
 
-	<menuitem name="event-root-event" title="Event" parent="event-root"
-		action="action.event.view.event" />
+	<menuitem name="event-root-event" title="Event"
+		parent="event-root" action="action.event.view.event" />
 	<action-view name="action.event.view.event" title="Event"
 		model="com.axelor.event.db.Event">
 		<view type="grid" name="event-grid" />
 		<view type="form" name="event-form" />
+		<view type="cards" name="event-cards" />
+		<view type="calendar" name="event-calendar" />
 	</action-view>
 </object-views>
 

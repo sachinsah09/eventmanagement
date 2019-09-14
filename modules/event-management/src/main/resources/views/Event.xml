@@ -27,11 +27,11 @@
 		<panel title="Fill all Details">
 			<field name="reference"
 				onChange="action.event.calulate.event.summary.fields" />
-			<field name="startDate" />
-			<field name="endDate" />
+			<field name="startDate" onChange="action.check.validation.on.event.dates"/>
+			<field name="endDate" onChange="action.check.validation.on.event.dates"/>
 			<field name="venue" />
-			<field name="registrationOpen" />
-			<field name="registrationClose" />
+			<field name="registrationOpen" onChange="action.check.validation.on.event.dates"/>
+			<field name="registrationClose" onChange="action.check.validation.on.event.dates"/>
 			<field name="capacity"
 				onChange="action.check.condition.on.new.registration" />
 			<field name="eventFees" />
@@ -108,4 +108,18 @@
 			message="Registration is full :) Check Capacity and total Entry"
 			if="eventRegistrationList.size() &gt; capacity" />
 	</action-validate>
+
+	<action-validate
+		name="action.check.validation.on.event.dates">
+		<error message="Start date cannot be after the End date "
+			if="startDate &gt; endDate" />
+		<error message="End date cannot be before the Start date "
+			if="endDate &lt; startDate" />
+		<error message=" Registration open date cannot be after the Start date "
+			if="registrationOpen &gt; startDate" />
+		<error message="Registration close cannot be before the Start date "
+			if="registrationClose &gt; startDate" />
+	</action-validate>
+
+
 </object-views>

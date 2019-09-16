@@ -1,2 +1,4 @@
 rootProject.name = 'event-management-app'
 include "modules:event-management"
+
+

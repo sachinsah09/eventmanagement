@@ -24,9 +24,12 @@
 		onLoad="action.event.total.entry,action.event.calulate.event.summary.fields"
 		onSave="action.check.validation.on.new.registration,action.check.condition.on.new.registration,action.event.calulate.event.summary.fields"
 		model="com.axelor.event.db.Event">
+		<toolbar>
+			<button name="importRegistration" title="Import registration"
+				icon="fa-print" readonlyIf="id == null" onClick="action-base-view-import-registration-popup" />
+		</toolbar>
 		<panel title="Fill all Details">
-			<field name="reference"
-				onChange="" />
+			<field name="reference" onChange="" />
 			<field name="startDate"
 				onChange="action.check.validation.on.event.dates" />
 			<field name="endDate"
@@ -81,6 +84,31 @@
     ]]></template>
 	</cards>
 
+	<form name="wizard-import-registration-form" title="Import Registration"
+		model="com.axelor.event.db.Event">
+		<panel name="wizardPanel">
+			<field name="metaFile" title="Input file" type="many-to-one"
+				target="com.axelor.meta.db.MetaFile" widget="binary-link" />
+			<button name="importBtn" colSpan="4" title="Import"
+				readonlyIf="metaFile == null"
+				onClick="action.event.method.import.registration" />
+		</panel>
+	</form>
+	
+	<action-method name="action.event.method.import.registration">
+	<call class="com.axelor.event.web.ImportController" method="importRegistration"/>
+	</action-method>
+	
+	 <action-view name="action-base-view-import-registration-popup" title="action import" model="com.axelor.event.db.Event">
+    	<view type="form" name="wizard-import-registration-form"/>
+    	<view-param name="show-toolbar" value="false"/>
+  		<view-param name="width" value="800"/>
+    	<view-param name="popup" value="true"/>
+    	<view-param name="show-confirm" value="false"/>
+  		<view-param name="popup-save" value="false"/>
+  		<view-param name="popup" value="reload"/>
+    </action-view>
+    
 	<calendar name="event-calendar" title="Event"
 		model="com.axelor.event.db.Event" eventStart="startDate"
 		eventStop="endDate" eventLength="1">

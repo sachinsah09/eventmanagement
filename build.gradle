@@ -39,4 +39,5 @@ allprojects {
 dependencies {
   // add module dependencies
 compile project(':modules:event-management')
+
 }

@@ -21,12 +21,12 @@
 	</grid>
 
 	<form name="event-form" title="Event-Form"
-		onLoad="action.event.total.entry"
-		onSave="action.check.validation.on.new.registration,action.check.condition.on.new.registration"
+		onLoad="action.event.total.entry,action.event.calulate.event.summary.fields"
+		onSave="action.check.validation.on.new.registration,action.check.condition.on.new.registration,action.event.calulate.event.summary.fields"
 		model="com.axelor.event.db.Event">
 		<panel title="Fill all Details">
 			<field name="reference"
-				onChange="action.event.calulate.event.summary.fields" />
+				onChange="" />
 			<field name="startDate"
 				onChange="action.check.validation.on.event.dates" />
 			<field name="endDate"

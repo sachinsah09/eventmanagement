@@ -18,16 +18,24 @@
 		title="Event-Registration-Form"
 		model="com.axelor.event.db.EventRegistration">
 		<panel title="Fill all Details">
-			<field name="event" onChange="action.validate.capacity,action.record.event.registration.set.amount.value"/>
+			<field name="event"
+				onChange="action.validate.capacity,action.record.event.registration.set.amount.value" />
 			<field name="name" />
 			<field name="email" placeholder="something@example.com"
 				pattern="^[a-z0-9A-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9A-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,})$" />
 			<field name="address" />
 			<field name="registrationDate"
-				onChange="action.check.validation.on.date" />
+				onChange="action.check.validation.on.date,action.event.registration.calculate.amount" />
 			<field name="amount" />
 		</panel>
 	</form>
+
+
+	<action-method
+		name="action.event.registration.calculate.amount">
+		<call class="com.axelor.event.web.EventRegistrationController"
+			method="calculateAmount" />
+	</action-method>
 
 	<action-validate name="action.check.validation.on.date">
 		<error
@@ -42,8 +50,11 @@
 		<error message="Registration is full :). Sorry for Inconvience"
 			if=" event != null &amp;&amp; event.totalEntry &gt; event.capacity" />
 	</action-validate>
-	
-	<action-record name="action.record.event.registration.set.amount.value" model="com.axelor.event.db.EventRegistration">
-	<field name="amount" expr="eval: event.eventFees" if="event != null"/>
-	</action-record>	
+
+	<action-record
+		name="action.record.event.registration.set.amount.value"
+		model="com.axelor.event.db.EventRegistration">
+		<field name="amount" expr="eval: event.eventFees"
+			if="event != null" />
+	</action-record>
 </object-views>

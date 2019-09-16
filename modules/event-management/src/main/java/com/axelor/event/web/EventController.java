@@ -13,11 +13,12 @@ public class EventController {
 
 	public void calculateEventSummaryFields(ActionRequest request, ActionResponse response) {
 		Event event = request.getContext().asType(Event.class);
-		try {
-			event = eventService.calculateEventSummaryFields(event);
+		try {	
+		event = eventService.calculateEventSummaryFields(event);
 			response.setValues(event);
-		} catch (Exception e) {
-			System.out.println(e);
+		}
+		catch (Exception e) {
+			response.setError("Something went wrong ! please try again");
 		}
 	}
 }

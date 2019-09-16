@@ -182,6 +182,90 @@
                     <text-property name="displayName">venue</text-property>
                     <text-property name="heading">venue</text-property>
                 </structure>
+                <structure>
+                    <property name="columnName">id_1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">id</text-property>
+                    <text-property name="heading">id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">archived_1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">archived</text-property>
+                    <text-property name="heading">archived</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">version_1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">version</text-property>
+                    <text-property name="heading">version</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">created_on_1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">created_on</text-property>
+                    <text-property name="heading">created_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">updated_on_1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">updated_on</text-property>
+                    <text-property name="heading">updated_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">attrs_1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">attrs</text-property>
+                    <text-property name="heading">attrs</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">city</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">city</text-property>
+                    <text-property name="heading">city</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">country</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">country</text-property>
+                    <text-property name="heading">country</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">flat_house_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">flat_house_no</text-property>
+                    <text-property name="heading">flat_house_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">full_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">full_name</text-property>
+                    <text-property name="heading">full_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">land_mark</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">land_mark</text-property>
+                    <text-property name="heading">land_mark</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">street</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">street</text-property>
+                    <text-property name="heading">street</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">created_by_1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">created_by</text-property>
+                    <text-property name="heading">created_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">updated_by_1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">updated_by</text-property>
+                    <text-property name="heading">updated_by</text-property>
+                </structure>
             </list-property>
             <list-property name="parameters">
                 <structure>
@@ -295,6 +379,76 @@
                     <structure>
                         <property name="position">20</property>
                         <property name="name">venue</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">id_1</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">archived_1</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">version_1</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">created_on_1</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">updated_on_1</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">attrs_1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">city</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">country</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">29</property>
+                        <property name="name">flat_house_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">30</property>
+                        <property name="name">full_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">31</property>
+                        <property name="name">land_mark</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">32</property>
+                        <property name="name">street</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">33</property>
+                        <property name="name">created_by_1</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">34</property>
+                        <property name="name">updated_by_1</property>
                         <property name="dataType">decimal</property>
                     </structure>
                 </list-property>
@@ -441,9 +595,106 @@
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">-5</property>
                 </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">id_1</property>
+                    <property name="nativeName">id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">archived_1</property>
+                    <property name="nativeName">archived</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">-7</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">version_1</property>
+                    <property name="nativeName">version</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">created_on_1</property>
+                    <property name="nativeName">created_on</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">updated_on_1</property>
+                    <property name="nativeName">updated_on</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">attrs_1</property>
+                    <property name="nativeName">attrs</property>
+                    <property name="nativeDataType">1111</property>
+                </structure>
+                <structure>
+                    <property name="position">27</property>
+                    <property name="name">city</property>
+                    <property name="nativeName">city</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">28</property>
+                    <property name="name">country</property>
+                    <property name="nativeName">country</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">29</property>
+                    <property name="name">flat_house_no</property>
+                    <property name="nativeName">flat_house_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">30</property>
+                    <property name="name">full_name</property>
+                    <property name="nativeName">full_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">31</property>
+                    <property name="name">land_mark</property>
+                    <property name="nativeName">land_mark</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">32</property>
+                    <property name="name">street</property>
+                    <property name="nativeName">street</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">33</property>
+                    <property name="name">created_by_1</property>
+                    <property name="nativeName">created_by</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">34</property>
+                    <property name="name">updated_by_1</property>
+                    <property name="nativeName">updated_by</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select *
-from event_event ee  where ee.id=?;]]></xml-property>
+from event_event ee join event_address ea on (ee.venue = ea.id) where ee.id=?;]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -1476,8 +1727,22 @@ from event_event_registration er where er.event = ?]]></xml-property>
 </model:DesignValues>]]></xml-property>
         </oda-data-set>
     </data-sets>
+    <styles>
+        <style name="row" id="46">
+            <property name="fontSize">12pt</property>
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+        </style>
+        <style name="tablestyle" id="47">
+            <property name="backgroundColor">#808080</property>
+            <property name="fontFamily">"FreeSans"</property>
+            <property name="fontSize">14pt</property>
+        </style>
+    </styles>
     <page-setup>
         <simple-master-page name="Simple MasterPage" id="2">
+            <property name="leftMargin">0.2517482517482518in</property>
+            <property name="rightMargin">0.3146853146853147in</property>
             <page-footer>
                 <text id="3">
                     <property name="contentType">html</property>
@@ -1488,30 +1753,719 @@ from event_event_registration er where er.event = ?]]></xml-property>
     </page-setup>
     <body>
         <label id="37">
-            <property name="fontSize">24pt</property>
+            <property name="fontSize">28pt</property>
             <property name="fontWeight">bold</property>
-            <text-property name="text">                                                       EVENT SUMMARY</text-property>
+            <text-property name="text">                                   EVENT SUMMARY</text-property>
         </label>
-        <label id="38">
-            <property name="display">inline</property>
-            <text-property name="text">EVENT  :</text-property>
-        </label>
-        <label id="39">
-            <property name="display">inline</property>
-            <text-property name="text">VENUE :</text-property>
-        </label>
-        <label id="40">
-            <property name="display">inline</property>
-            <text-property name="text">CAPACITY :</text-property>
-        </label>
-        <label id="44">
-            <property name="display">inline</property>
-            <text-property name="text">Registration CLose :</text-property>
-        </label>
-        <label id="45">
-            <property name="display">inline</property>
-            <text-property name="text">START DATE :</text-property>
-        </label>
+        <grid id="73">
+            <property name="marginTop">25pt</property>
+            <column id="74"/>
+            <column id="75"/>
+            <column id="76"/>
+            <row id="77">
+                <cell id="78">
+                    <label id="38">
+                        <property name="fontSize">14pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">EVENT  REFERENCE :  </text-property>
+                    </label>
+                    <data id="89">
+                        <property name="fontSize">12pt</property>
+                        <property name="display">inline</property>
+                        <property name="dataSet">Event Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">id</property>
+                                <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">archived</property>
+                                <expression name="expression" type="javascript">dataSetRow["archived"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">version</property>
+                                <expression name="expression" type="javascript">dataSetRow["version"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">created_on</property>
+                                <expression name="expression" type="javascript">dataSetRow["created_on"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">updated_on</property>
+                                <expression name="expression" type="javascript">dataSetRow["updated_on"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_collected</property>
+                                <expression name="expression" type="javascript">dataSetRow["amount_collected"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">attrs</property>
+                                <expression name="expression" type="javascript">dataSetRow["attrs"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">capacity</property>
+                                <expression name="expression" type="javascript">dataSetRow["capacity"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">description</property>
+                                <expression name="expression" type="javascript">dataSetRow["description"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">end_date</property>
+                                <expression name="expression" type="javascript">dataSetRow["end_date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">event_fees</property>
+                                <expression name="expression" type="javascript">dataSetRow["event_fees"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">reference</property>
+                                <expression name="expression" type="javascript">dataSetRow["reference"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">registration_close</property>
+                                <expression name="expression" type="javascript">dataSetRow["registration_close"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">registration_open</property>
+                                <expression name="expression" type="javascript">dataSetRow["registration_open"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">start_date</property>
+                                <expression name="expression" type="javascript">dataSetRow["start_date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">total_entry</property>
+                                <expression name="expression" type="javascript">dataSetRow["total_entry"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">totat_discount</property>
+                                <expression name="expression" type="javascript">dataSetRow["totat_discount"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">created_by</property>
+                                <expression name="expression" type="javascript">dataSetRow["created_by"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">updated_by</property>
+                                <expression name="expression" type="javascript">dataSetRow["updated_by"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">venue</property>
+                                <expression name="expression" type="javascript">dataSetRow["venue"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">reference</property>
+                    </data>
+                </cell>
+                <cell id="79"/>
+                <cell id="80">
+                    <label id="40">
+                        <property name="fontSize">14pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">CAPACITY  : </text-property>
+                    </label>
+                    <data id="90">
+                        <property name="fontSize">12pt</property>
+                        <property name="display">inline</property>
+                        <property name="dataSet">Event Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">id</property>
+                                <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">archived</property>
+                                <expression name="expression" type="javascript">dataSetRow["archived"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">version</property>
+                                <expression name="expression" type="javascript">dataSetRow["version"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">created_on</property>
+                                <expression name="expression" type="javascript">dataSetRow["created_on"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">updated_on</property>
+                                <expression name="expression" type="javascript">dataSetRow["updated_on"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_collected</property>
+                                <expression name="expression" type="javascript">dataSetRow["amount_collected"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">attrs</property>
+                                <expression name="expression" type="javascript">dataSetRow["attrs"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">capacity</property>
+                                <expression name="expression" type="javascript">dataSetRow["capacity"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">description</property>
+                                <expression name="expression" type="javascript">dataSetRow["description"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">end_date</property>
+                                <expression name="expression" type="javascript">dataSetRow["end_date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">event_fees</property>
+                                <expression name="expression" type="javascript">dataSetRow["event_fees"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">reference</property>
+                                <expression name="expression" type="javascript">dataSetRow["reference"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">registration_close</property>
+                                <expression name="expression" type="javascript">dataSetRow["registration_close"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">registration_open</property>
+                                <expression name="expression" type="javascript">dataSetRow["registration_open"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">start_date</property>
+                                <expression name="expression" type="javascript">dataSetRow["start_date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">total_entry</property>
+                                <expression name="expression" type="javascript">dataSetRow["total_entry"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">totat_discount</property>
+                                <expression name="expression" type="javascript">dataSetRow["totat_discount"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">created_by</property>
+                                <expression name="expression" type="javascript">dataSetRow["created_by"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">updated_by</property>
+                                <expression name="expression" type="javascript">dataSetRow["updated_by"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">venue</property>
+                                <expression name="expression" type="javascript">dataSetRow["venue"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">capacity</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="81">
+                <cell id="82">
+                    <label id="91">
+                        <property name="fontSize">14pt</property>
+                        <property name="marginTop">5pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">Registration  Open :</text-property>
+                    </label>
+                    <data id="93">
+                        <property name="fontSize">12pt</property>
+                        <property name="display">inline</property>
+                        <property name="dataSet">Event Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">id</property>
+                                <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">archived</property>
+                                <expression name="expression" type="javascript">dataSetRow["archived"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">version</property>
+                                <expression name="expression" type="javascript">dataSetRow["version"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">created_on</property>
+                                <expression name="expression" type="javascript">dataSetRow["created_on"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">updated_on</property>
+                                <expression name="expression" type="javascript">dataSetRow["updated_on"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_collected</property>
+                                <expression name="expression" type="javascript">dataSetRow["amount_collected"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">attrs</property>
+                                <expression name="expression" type="javascript">dataSetRow["attrs"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">capacity</property>
+                                <expression name="expression" type="javascript">dataSetRow["capacity"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">description</property>
+                                <expression name="expression" type="javascript">dataSetRow["description"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">end_date</property>
+                                <expression name="expression" type="javascript">dataSetRow["end_date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">event_fees</property>
+                                <expression name="expression" type="javascript">dataSetRow["event_fees"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">reference</property>
+                                <expression name="expression" type="javascript">dataSetRow["reference"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">registration_close</property>
+                                <expression name="expression" type="javascript">dataSetRow["registration_close"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">registration_open</property>
+                                <expression name="expression" type="javascript">dataSetRow["registration_open"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">start_date</property>
+                                <expression name="expression" type="javascript">dataSetRow["start_date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">total_entry</property>
+                                <expression name="expression" type="javascript">dataSetRow["total_entry"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">totat_discount</property>
+                                <expression name="expression" type="javascript">dataSetRow["totat_discount"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">created_by</property>
+                                <expression name="expression" type="javascript">dataSetRow["created_by"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">updated_by</property>
+                                <expression name="expression" type="javascript">dataSetRow["updated_by"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">venue</property>
+                                <expression name="expression" type="javascript">dataSetRow["venue"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">registration_open</property>
+                    </data>
+                </cell>
+                <cell id="83"/>
+                <cell id="84">
+                    <label id="92">
+                        <property name="fontSize">14pt</property>
+                        <property name="marginTop">5pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">Registration Close :</text-property>
+                    </label>
+                    <data id="94">
+                        <property name="fontSize">12pt</property>
+                        <property name="display">inline</property>
+                        <property name="dataSet">Event Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">id</property>
+                                <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">archived</property>
+                                <expression name="expression" type="javascript">dataSetRow["archived"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">version</property>
+                                <expression name="expression" type="javascript">dataSetRow["version"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">created_on</property>
+                                <expression name="expression" type="javascript">dataSetRow["created_on"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">updated_on</property>
+                                <expression name="expression" type="javascript">dataSetRow["updated_on"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_collected</property>
+                                <expression name="expression" type="javascript">dataSetRow["amount_collected"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">attrs</property>
+                                <expression name="expression" type="javascript">dataSetRow["attrs"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">capacity</property>
+                                <expression name="expression" type="javascript">dataSetRow["capacity"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">description</property>
+                                <expression name="expression" type="javascript">dataSetRow["description"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">end_date</property>
+                                <expression name="expression" type="javascript">dataSetRow["end_date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">event_fees</property>
+                                <expression name="expression" type="javascript">dataSetRow["event_fees"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">reference</property>
+                                <expression name="expression" type="javascript">dataSetRow["reference"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">registration_close</property>
+                                <expression name="expression" type="javascript">dataSetRow["registration_close"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">registration_open</property>
+                                <expression name="expression" type="javascript">dataSetRow["registration_open"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">start_date</property>
+                                <expression name="expression" type="javascript">dataSetRow["start_date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">total_entry</property>
+                                <expression name="expression" type="javascript">dataSetRow["total_entry"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">totat_discount</property>
+                                <expression name="expression" type="javascript">dataSetRow["totat_discount"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">created_by</property>
+                                <expression name="expression" type="javascript">dataSetRow["created_by"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">updated_by</property>
+                                <expression name="expression" type="javascript">dataSetRow["updated_by"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">venue</property>
+                                <expression name="expression" type="javascript">dataSetRow["venue"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">registration_close</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="85">
+                <cell id="86">
+                    <label id="95">
+                        <property name="fontSize">14pt</property>
+                        <property name="marginTop">5pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">START DATE :</text-property>
+                    </label>
+                    <data id="97">
+                        <property name="fontSize">12pt</property>
+                        <property name="display">inline</property>
+                        <property name="dataSet">Event Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">id</property>
+                                <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">archived</property>
+                                <expression name="expression" type="javascript">dataSetRow["archived"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">version</property>
+                                <expression name="expression" type="javascript">dataSetRow["version"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">created_on</property>
+                                <expression name="expression" type="javascript">dataSetRow["created_on"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">updated_on</property>
+                                <expression name="expression" type="javascript">dataSetRow["updated_on"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_collected</property>
+                                <expression name="expression" type="javascript">dataSetRow["amount_collected"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">attrs</property>
+                                <expression name="expression" type="javascript">dataSetRow["attrs"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">capacity</property>
+                                <expression name="expression" type="javascript">dataSetRow["capacity"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">description</property>
+                                <expression name="expression" type="javascript">dataSetRow["description"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">end_date</property>
+                                <expression name="expression" type="javascript">dataSetRow["end_date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">event_fees</property>
+                                <expression name="expression" type="javascript">dataSetRow["event_fees"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">reference</property>
+                                <expression name="expression" type="javascript">dataSetRow["reference"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">registration_close</property>
+                                <expression name="expression" type="javascript">dataSetRow["registration_close"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">registration_open</property>
+                                <expression name="expression" type="javascript">dataSetRow["registration_open"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">start_date</property>
+                                <expression name="expression" type="javascript">dataSetRow["start_date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">total_entry</property>
+                                <expression name="expression" type="javascript">dataSetRow["total_entry"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">totat_discount</property>
+                                <expression name="expression" type="javascript">dataSetRow["totat_discount"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">created_by</property>
+                                <expression name="expression" type="javascript">dataSetRow["created_by"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">updated_by</property>
+                                <expression name="expression" type="javascript">dataSetRow["updated_by"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">venue</property>
+                                <expression name="expression" type="javascript">dataSetRow["venue"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">start_date</property>
+                    </data>
+                </cell>
+                <cell id="87"/>
+                <cell id="88">
+                    <label id="96">
+                        <property name="fontSize">14pt</property>
+                        <property name="marginTop">5pt</property>
+                        <property name="display">inline</property>
+                        <text-property name="text">END  DATE : </text-property>
+                    </label>
+                    <data id="98">
+                        <property name="fontSize">12pt</property>
+                        <property name="display">inline</property>
+                        <property name="dataSet">Event Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">id</property>
+                                <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">archived</property>
+                                <expression name="expression" type="javascript">dataSetRow["archived"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">version</property>
+                                <expression name="expression" type="javascript">dataSetRow["version"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">created_on</property>
+                                <expression name="expression" type="javascript">dataSetRow["created_on"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">updated_on</property>
+                                <expression name="expression" type="javascript">dataSetRow["updated_on"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_collected</property>
+                                <expression name="expression" type="javascript">dataSetRow["amount_collected"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">attrs</property>
+                                <expression name="expression" type="javascript">dataSetRow["attrs"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">capacity</property>
+                                <expression name="expression" type="javascript">dataSetRow["capacity"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">description</property>
+                                <expression name="expression" type="javascript">dataSetRow["description"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">end_date</property>
+                                <expression name="expression" type="javascript">dataSetRow["end_date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">event_fees</property>
+                                <expression name="expression" type="javascript">dataSetRow["event_fees"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">reference</property>
+                                <expression name="expression" type="javascript">dataSetRow["reference"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">registration_close</property>
+                                <expression name="expression" type="javascript">dataSetRow["registration_close"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">registration_open</property>
+                                <expression name="expression" type="javascript">dataSetRow["registration_open"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">start_date</property>
+                                <expression name="expression" type="javascript">dataSetRow["start_date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">total_entry</property>
+                                <expression name="expression" type="javascript">dataSetRow["total_entry"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">totat_discount</property>
+                                <expression name="expression" type="javascript">dataSetRow["totat_discount"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">created_by</property>
+                                <expression name="expression" type="javascript">dataSetRow["created_by"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">updated_by</property>
+                                <expression name="expression" type="javascript">dataSetRow["updated_by"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">venue</property>
+                                <expression name="expression" type="javascript">dataSetRow["venue"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">end_date</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
         <table id="8">
             <property name="marginTop">40pt</property>
             <property name="dataSet">Event Registration Data Set</property>
@@ -1548,17 +2502,32 @@ from event_event_registration er where er.event = ?]]></xml-property>
                 <row id="9">
                     <cell id="10">
                         <label id="13">
-                            <text-property name="text">name</text-property>
+                            <property name="style">tablestyle</property>
+                            <property name="paddingTop">2pt</property>
+                            <property name="paddingLeft">2pt</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="paddingRight">2pt</property>
+                            <text-property name="text">NAME</text-property>
                         </label>
                     </cell>
                     <cell id="14">
                         <label id="15">
-                            <text-property name="text">registration_date</text-property>
+                            <property name="style">tablestyle</property>
+                            <property name="paddingTop">2pt</property>
+                            <property name="paddingLeft">2pt</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="paddingRight">2pt</property>
+                            <text-property name="text">Registration Date</text-property>
                         </label>
                     </cell>
                     <cell id="16">
                         <label id="11">
-                            <text-property name="text">amount</text-property>
+                            <property name="style">tablestyle</property>
+                            <property name="paddingTop">2pt</property>
+                            <property name="paddingLeft">2pt</property>
+                            <property name="paddingBottom">2pt</property>
+                            <property name="paddingRight">2pt</property>
+                            <text-property name="text">AMOUNT</text-property>
                         </label>
                     </cell>
                 </row>
@@ -1567,16 +2536,19 @@ from event_event_registration er where er.event = ?]]></xml-property>
                 <row id="18">
                     <cell id="19">
                         <data id="22">
+                            <property name="style">row</property>
                             <property name="resultSetColumn">name</property>
                         </data>
                     </cell>
                     <cell id="23">
                         <data id="24">
+                            <property name="style">row</property>
                             <property name="resultSetColumn">registration_date</property>
                         </data>
                     </cell>
                     <cell id="25">
                         <data id="20">
+                            <property name="style">row</property>
                             <property name="resultSetColumn">amount</property>
                         </data>
                     </cell>
@@ -1584,24 +2556,538 @@ from event_event_registration er where er.event = ?]]></xml-property>
             </detail>
             <footer>
                 <row id="27">
-                    <cell id="28"/>
-                    <cell id="30"/>
+                    <cell id="28">
+                        <label id="41">
+                            <property name="fontSize">12pt</property>
+                            <property name="marginTop">25pt</property>
+                            <property name="marginLeft">10pt</property>
+                            <property name="display">inline</property>
+                            <text-property name="text">TOTAL ENTRY :</text-property>
+                        </label>
+                        <data id="48">
+                            <property name="fontSize">12pt</property>
+                            <property name="marginLeft">10pt</property>
+                            <property name="dataSet">Event Data Set</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">id</property>
+                                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">archived</property>
+                                    <expression name="expression" type="javascript">dataSetRow["archived"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">version</property>
+                                    <expression name="expression" type="javascript">dataSetRow["version"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">created_on</property>
+                                    <expression name="expression" type="javascript">dataSetRow["created_on"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">updated_on</property>
+                                    <expression name="expression" type="javascript">dataSetRow["updated_on"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">amount_collected</property>
+                                    <expression name="expression" type="javascript">dataSetRow["amount_collected"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">attrs</property>
+                                    <expression name="expression" type="javascript">dataSetRow["attrs"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">capacity</property>
+                                    <expression name="expression" type="javascript">dataSetRow["capacity"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">description</property>
+                                    <expression name="expression" type="javascript">dataSetRow["description"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">end_date</property>
+                                    <expression name="expression" type="javascript">dataSetRow["end_date"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">event_fees</property>
+                                    <expression name="expression" type="javascript">dataSetRow["event_fees"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">reference</property>
+                                    <expression name="expression" type="javascript">dataSetRow["reference"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">registration_close</property>
+                                    <expression name="expression" type="javascript">dataSetRow["registration_close"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">registration_open</property>
+                                    <expression name="expression" type="javascript">dataSetRow["registration_open"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">start_date</property>
+                                    <expression name="expression" type="javascript">dataSetRow["start_date"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">total_entry</property>
+                                    <expression name="expression" type="javascript">dataSetRow["total_entry"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">totat_discount</property>
+                                    <expression name="expression" type="javascript">dataSetRow["totat_discount"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">created_by</property>
+                                    <expression name="expression" type="javascript">dataSetRow["created_by"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">updated_by</property>
+                                    <expression name="expression" type="javascript">dataSetRow["updated_by"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">venue</property>
+                                    <expression name="expression" type="javascript">dataSetRow["venue"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">total_entry</property>
+                        </data>
+                    </cell>
+                    <cell id="30">
+                        <label id="43">
+                            <property name="fontSize">12pt</property>
+                            <property name="marginTop">25pt</property>
+                            <property name="display">inline</property>
+                            <text-property name="text">TOTAL DISCOUNT :</text-property>
+                        </label>
+                        <data id="49">
+                            <property name="fontSize">12pt</property>
+                            <property name="dataSet">Event Data Set</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">id</property>
+                                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">archived</property>
+                                    <expression name="expression" type="javascript">dataSetRow["archived"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">version</property>
+                                    <expression name="expression" type="javascript">dataSetRow["version"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">created_on</property>
+                                    <expression name="expression" type="javascript">dataSetRow["created_on"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">updated_on</property>
+                                    <expression name="expression" type="javascript">dataSetRow["updated_on"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">amount_collected</property>
+                                    <expression name="expression" type="javascript">dataSetRow["amount_collected"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">attrs</property>
+                                    <expression name="expression" type="javascript">dataSetRow["attrs"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">capacity</property>
+                                    <expression name="expression" type="javascript">dataSetRow["capacity"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">description</property>
+                                    <expression name="expression" type="javascript">dataSetRow["description"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">end_date</property>
+                                    <expression name="expression" type="javascript">dataSetRow["end_date"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">event_fees</property>
+                                    <expression name="expression" type="javascript">dataSetRow["event_fees"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">reference</property>
+                                    <expression name="expression" type="javascript">dataSetRow["reference"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">registration_close</property>
+                                    <expression name="expression" type="javascript">dataSetRow["registration_close"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">registration_open</property>
+                                    <expression name="expression" type="javascript">dataSetRow["registration_open"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">start_date</property>
+                                    <expression name="expression" type="javascript">dataSetRow["start_date"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">total_entry</property>
+                                    <expression name="expression" type="javascript">dataSetRow["total_entry"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">totat_discount</property>
+                                    <expression name="expression" type="javascript">dataSetRow["totat_discount"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">created_by</property>
+                                    <expression name="expression" type="javascript">dataSetRow["created_by"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">updated_by</property>
+                                    <expression name="expression" type="javascript">dataSetRow["updated_by"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">venue</property>
+                                    <expression name="expression" type="javascript">dataSetRow["venue"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">totat_discount</property>
+                        </data>
+                    </cell>
                     <cell id="31">
                         <label id="42">
+                            <property name="fontSize">12pt</property>
+                            <property name="marginTop">25pt</property>
                             <property name="display">inline</property>
                             <text-property name="text">TOTAL  AMOUNT COLLECTED :</text-property>
                         </label>
+                        <data id="50">
+                            <property name="fontSize">12pt</property>
+                            <property name="dataSet">Event Data Set</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">id</property>
+                                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">archived</property>
+                                    <expression name="expression" type="javascript">dataSetRow["archived"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">version</property>
+                                    <expression name="expression" type="javascript">dataSetRow["version"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">created_on</property>
+                                    <expression name="expression" type="javascript">dataSetRow["created_on"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">updated_on</property>
+                                    <expression name="expression" type="javascript">dataSetRow["updated_on"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">amount_collected</property>
+                                    <expression name="expression" type="javascript">dataSetRow["amount_collected"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">attrs</property>
+                                    <expression name="expression" type="javascript">dataSetRow["attrs"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">capacity</property>
+                                    <expression name="expression" type="javascript">dataSetRow["capacity"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">description</property>
+                                    <expression name="expression" type="javascript">dataSetRow["description"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">end_date</property>
+                                    <expression name="expression" type="javascript">dataSetRow["end_date"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">event_fees</property>
+                                    <expression name="expression" type="javascript">dataSetRow["event_fees"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">reference</property>
+                                    <expression name="expression" type="javascript">dataSetRow["reference"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">registration_close</property>
+                                    <expression name="expression" type="javascript">dataSetRow["registration_close"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">registration_open</property>
+                                    <expression name="expression" type="javascript">dataSetRow["registration_open"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">start_date</property>
+                                    <expression name="expression" type="javascript">dataSetRow["start_date"]</expression>
+                                    <property name="dataType">date-time</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">total_entry</property>
+                                    <expression name="expression" type="javascript">dataSetRow["total_entry"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">totat_discount</property>
+                                    <expression name="expression" type="javascript">dataSetRow["totat_discount"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">created_by</property>
+                                    <expression name="expression" type="javascript">dataSetRow["created_by"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">updated_by</property>
+                                    <expression name="expression" type="javascript">dataSetRow["updated_by"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">venue</property>
+                                    <expression name="expression" type="javascript">dataSetRow["venue"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">amount_collected</property>
+                        </data>
                     </cell>
                 </row>
             </footer>
         </table>
-        <label id="41">
+        <label id="99">
+            <property name="fontSize">14pt</property>
+            <property name="marginTop">30pt</property>
             <property name="display">inline</property>
-            <text-property name="text">TOTAL ENTRY :</text-property>
+            <text-property name="text">VENUE : </text-property>
         </label>
-        <label id="43">
-            <property name="display">inline</property>
-            <text-property name="text">TOTAL DISCOUNT :</text-property>
-        </label>
+        <data id="100">
+            <property name="fontSize">12pt</property>
+            <property name="dataSet">Event Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">id</property>
+                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">archived</property>
+                    <expression name="expression" type="javascript">dataSetRow["archived"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">version</property>
+                    <expression name="expression" type="javascript">dataSetRow["version"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">created_on</property>
+                    <expression name="expression" type="javascript">dataSetRow["created_on"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">updated_on</property>
+                    <expression name="expression" type="javascript">dataSetRow["updated_on"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">amount_collected</property>
+                    <expression name="expression" type="javascript">dataSetRow["amount_collected"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">attrs</property>
+                    <expression name="expression" type="javascript">dataSetRow["attrs"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">capacity</property>
+                    <expression name="expression" type="javascript">dataSetRow["capacity"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">description</property>
+                    <expression name="expression" type="javascript">dataSetRow["description"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">end_date</property>
+                    <expression name="expression" type="javascript">dataSetRow["end_date"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">event_fees</property>
+                    <expression name="expression" type="javascript">dataSetRow["event_fees"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">reference</property>
+                    <expression name="expression" type="javascript">dataSetRow["reference"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">registration_close</property>
+                    <expression name="expression" type="javascript">dataSetRow["registration_close"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">registration_open</property>
+                    <expression name="expression" type="javascript">dataSetRow["registration_open"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">start_date</property>
+                    <expression name="expression" type="javascript">dataSetRow["start_date"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">total_entry</property>
+                    <expression name="expression" type="javascript">dataSetRow["total_entry"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">totat_discount</property>
+                    <expression name="expression" type="javascript">dataSetRow["totat_discount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">created_by</property>
+                    <expression name="expression" type="javascript">dataSetRow["created_by"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">updated_by</property>
+                    <expression name="expression" type="javascript">dataSetRow["updated_by"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">venue</property>
+                    <expression name="expression" type="javascript">dataSetRow["venue"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">id_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["id_1"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">archived_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["archived_1"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">version_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["version_1"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">created_on_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["created_on_1"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">updated_on_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["updated_on_1"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">attrs_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["attrs_1"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">city</property>
+                    <expression name="expression" type="javascript">dataSetRow["city"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">country</property>
+                    <expression name="expression" type="javascript">dataSetRow["country"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">flat_house_no</property>
+                    <expression name="expression" type="javascript">dataSetRow["flat_house_no"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">full_name</property>
+                    <expression name="expression" type="javascript">dataSetRow["full_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">land_mark</property>
+                    <expression name="expression" type="javascript">dataSetRow["land_mark"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">street</property>
+                    <expression name="expression" type="javascript">dataSetRow["street"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">created_by_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["created_by_1"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">updated_by_1</property>
+                    <expression name="expression" type="javascript">dataSetRow["updated_by_1"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <property name="resultSetColumn">full_name</property>
+        </data>
     </body>
 </report>

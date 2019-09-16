@@ -27,11 +27,15 @@
 		<panel title="Fill all Details">
 			<field name="reference"
 				onChange="action.event.calulate.event.summary.fields" />
-			<field name="startDate" onChange="action.check.validation.on.event.dates"/>
-			<field name="endDate" onChange="action.check.validation.on.event.dates"/>
+			<field name="startDate"
+				onChange="action.check.validation.on.event.dates" />
+			<field name="endDate"
+				onChange="action.check.validation.on.event.dates" />
 			<field name="venue" />
-			<field name="registrationOpen" onChange="action.check.validation.on.event.dates"/>
-			<field name="registrationClose" onChange="action.check.validation.on.event.dates"/>
+			<field name="registrationOpen"
+				onChange="action.check.validation.on.event.dates" />
+			<field name="registrationClose"
+				onChange="action.check.validation.on.event.dates" />
 			<field name="capacity"
 				onChange="action.check.condition.on.new.registration" />
 			<field name="eventFees" />
@@ -98,7 +102,7 @@
 	<action-condition
 		name="action.check.condition.on.new.registration">
 		<check field="capacity"
-			if="eventRegistrationList.size() &gt; capacity"
+			if="evenRegistrationList != null &amp;&amp; eventRegistrationList.size() &gt; capacity"
 			error="Increase the Capacity to register more" />
 	</action-condition>
 
@@ -106,19 +110,24 @@
 		name="action.check.validation.on.new.registration">
 		<error
 			message="Registration is full :) Check Capacity and total Entry"
-			if="eventRegistrationList.size() &gt; capacity" />
+			if="evenRegistrationList != null &amp;&amp; eventRegistrationList.size() &gt; capacity" />
 	</action-validate>
 
 	<action-validate
 		name="action.check.validation.on.event.dates">
 		<error message="Start date cannot be after the End date "
-			if="startDate &gt; endDate" />
+			if="endDate != null &amp;&amp; startDate.isAfter(endDate)" />
 		<error message="End date cannot be before the Start date "
-			if="endDate &lt; startDate" />
-		<error message=" Registration open date cannot be after the Start date "
-			if="registrationOpen &gt; startDate" />
-		<error message="Registration close cannot be before the Start date "
-			if="registrationClose &gt; startDate" />
+			if="startDate !=null  &amp;&amp; endDate !=null &amp;&amp; endDate.isBefore(startDate)" />
+		<error
+			message=" Registration open date cannot be after the Start date "
+			if="startDate != null &amp;&amp; registrationOpen != null &amp;&amp; registrationOpen.isAfter(startDate)" />
+		<error
+			message="Registration close date cannot be before the Start date "
+			if="startDate != null &amp;&amp;  registrationClose != null &amp;&amp; registrationClose.isAfter(startDate)" />
+		<error
+			message="Registration close date cannot be before the Registration open Date "
+			if="registrationOpen != null &amp;&amp; registrationClose != null &amp;&amp; registrationClose.isBefore(registrationOpen)" />
 	</action-validate>
 
 

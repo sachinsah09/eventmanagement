@@ -21,8 +21,8 @@
 		<one-to-many name="discountList" title="Discount"
 			ref="com.axelor.event.db.Discount" />
 		<one-to-many name="eventRegistrationList"
-			title="Event Registrations"
-			ref="com.axelor.event.db.EventRegistration" />
+			title="Event Registrations" 
+			ref="com.axelor.event.db.EventRegistration"  mappedBy="event"/>
 		<integer name="totalEntry" title="Total Entry" readonly="true" />
 		<decimal name="amountCollected" title="Amount Collected"
 			readonly="true" />

@@ -16,7 +16,8 @@
 
 	<form name="event-registration-form"
 		title="Event-Registration-Form"
-		model="com.axelor.event.db.EventRegistration">
+		model="com.axelor.event.db.EventRegistration"
+		onNew="set.event.record,action.event.registration.hide.event">
 		<panel title="Fill all Details">
 			<field name="event"
 				onChange="action.validate.capacity,action.record.event.registration.set.amount.value" />
@@ -29,7 +30,17 @@
 			<field name="amount" />
 		</panel>
 	</form>
-
+	
+	<action-record name="set.event.record"
+		model="com.axelor.event.db.EventRegistration">
+		<field name="event"
+			expr="eval: __parent__"
+			if="!(__ref__ instanceof Event)" />
+	</action-record>
+	
+	<action-attrs name="action.event.registration.hide.event">
+		<attribute name="hidden" for="event" expr="eval: __parent__" />
+	</action-attrs>
 
 	<action-method
 		name="action.event.registration.calculate.amount">

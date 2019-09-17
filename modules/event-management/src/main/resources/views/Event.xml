@@ -55,7 +55,7 @@
 		</panel-related>
 
 		<panel-related field="eventRegistrationList"
-			onChange="action.check.validation.on.new.registration,action.check.condition.on.new.registration" />
+			onChange="action.check.validation.on.new.registration,action.check.condition.on.new.registration,action.event.calulate.event.summary.fields" />
 		<panel sidebar="true" title="Event Summary">
 			<field name="totalEntry" />
 			<field name="amountCollected" />

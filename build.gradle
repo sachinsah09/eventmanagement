@@ -39,5 +39,5 @@ allprojects {
 dependencies {
   // add module dependencies
 compile project(':modules:event-management')
-
+compile project(':modules:axelor-message')
 }

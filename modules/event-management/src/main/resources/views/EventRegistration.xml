@@ -17,6 +17,8 @@
 	<form name="event-registration-form"
 		title="Event-Registration-Form"
 		model="com.axelor.event.db.EventRegistration"
+		onLoad="action.event.registration.calculate.amount"
+		onSave="action.event.registration.calculate.amount"
 		onNew="set.event.record,action.event.registration.hide.event">
 		<panel title="Fill all Details">
 			<field name="event"

@@ -16,15 +16,17 @@ public class EventServiceImp implements EventService {
 			for (EventRegistration eventRegistration : event.getEventRegistrationList()) {
 				totalAmount = totalAmount.add(eventRegistration.getAmount());
 			}
-			System.out.println(totalAmount);
 			event.setAmountCollected(totalAmount);
 		}
 
 		if (event.getDiscountList() != null) {
-			for (Discount discount : event.getDiscountList()) {
-				totalDiscount = totalDiscount.add(discount.getDiscountAmount());
+			if (event.getEventFees() != null && event.getEventRegistrationList() != null) {
+				for (EventRegistration eventRegistration : event.getEventRegistrationList()) {
+					BigDecimal amount = eventRegistration.getAmount();
+					BigDecimal diff = event.getEventFees().subtract(amount);
+					totalDiscount = totalDiscount.add(diff);
+				}
 			}
-			System.out.println(totalDiscount);
 			event.setTotatDiscount(totalDiscount);
 		}
 

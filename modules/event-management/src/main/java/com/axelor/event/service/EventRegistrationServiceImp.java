@@ -16,10 +16,16 @@ public class EventRegistrationServiceImp implements EventRegistrationService {
 			LocalDateTime registrationDate = eventRegistration.getRegistrationDate();
 			if (registrationCloseDate != null && registrationDate != null) {
 				if (eventRegistration.getEvent().getDiscountList() != null) {
+					int temp2 = 0;
 					for (Discount discount : eventRegistration.getEvent().getDiscountList()) {
 						LocalDateTime discountDate = registrationCloseDate.minusDays(discount.getBeforeDays());
 						if (registrationDate.isBefore(discountDate)) {
-							amount = eventRegistration.getEvent().getEventFees().subtract(discount.getDiscountAmount());
+							int temp = discount.getBeforeDays();
+							if (temp > temp2) {
+								temp2 = temp;
+								amount = eventRegistration.getEvent().getEventFees()
+										.subtract(discount.getDiscountAmount());
+							}
 						}
 					}
 				}

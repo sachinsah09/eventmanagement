@@ -27,7 +27,7 @@ public class ImportController {
 			System.out.println(dataFile.getFileName());
 			response.setFlash("You have Selected CSV file");
 		}
-		   Importer importer = new CSVImporter("data-init/registration-config.xml","data-init/input/"+dataFile.getFileName());
+		   CSVImporter importer = new CSVImporter("data-init/registration-config.xml","data-init/input/"+dataFile.getFileName());
 		    importer.run();
 		  }
 	}

@@ -21,30 +21,30 @@
 	</grid>
 
 	<form name="event-form" title="Event-Form"
-		onLoad="action.event.total.entry,action.event.calulate.event.summary.fields"
-		onSave="action.check.validation.on.new.registration,action.check.condition.on.new.registration,action.event.calulate.event.summary.fields"
+		onSave="action-check-validation-on-new-registration,action-check-condition-on-new-registration,action-event-calulate-event-summary-fields,action-event-check-email-send"
 		model="com.axelor.event.db.Event">
 		<toolbar>
 			<button name="importRegistration" title="Import registration"
 				icon="fa-print" readonlyIf="id == null"
 				onClick="action-base-view-import-registration-popup" />
 			<button name="print Report" title="Print Report"
-				icon="fa-print" readonlyIf="id == null"
-				onClick="print.event.report" />		
+				icon="fa-print" readonlyIf="id == null" onClick="print-event-report" />
+			<button name="sendMail" title="send Mail" icon="fa-envelope"
+				onClick="action-send-by-email-with-template,action-event-check-email-send" />
 		</toolbar>
 		<panel title="Fill all Details">
 			<field name="reference" onChange="" />
 			<field name="startDate"
-				onChange="action.check.validation.on.event.dates" />
+				onChange="action-check-validation-on-event-dates" />
 			<field name="endDate"
-				onChange="action.check.validation.on.event.dates" />
+				onChange="action-check-validation-on-event-dates" />
 			<field name="venue" />
 			<field name="registrationOpen"
-				onChange="action.check.validation.on.event.dates" />
+				onChange="action-check-validation-on-event-dates" />
 			<field name="registrationClose"
-				onChange="action.check.validation.on.event.dates" />
+				onChange="action-check-validation-on-event-dates" />
 			<field name="capacity"
-				onChange="action.check.condition.on.new.registration" />
+				onChange="action-check-condition-on-new-registration" />
 			<field name="eventFees" />
 			<field name="description" widget="html" x-lite="true" />
 		</panel>
@@ -55,7 +55,7 @@
 		</panel-related>
 
 		<panel-related field="eventRegistrationList"
-			onChange="action.check.validation.on.new.registration,action.check.condition.on.new.registration,action.event.calulate.event.summary.fields" />
+			onChange="action-check-validation-on-new-registration,action-check-condition-on-new-registration,action-event-calulate-event-summary-fields" />
 		<panel sidebar="true" title="Event Summary">
 			<field name="totalEntry" />
 			<field name="amountCollected" />
@@ -95,12 +95,12 @@
 				target="com.axelor.meta.db.MetaFile" widget="binary-link" />
 			<button name="importBtn" colSpan="4" title="Import"
 				readonlyIf="metaFile == null"
-				onClick="action.event.method.import.registration" />
+				onClick="action-event-method-import-registration" />
 		</panel>
 	</form>
 
 	<action-method
-		name="action.event.method.import.registration">
+		name="action-event-method-import-registration">
 		<call class="com.axelor.event.web.ImportController"
 			method="importRegistration" />
 	</action-method>
@@ -124,38 +124,44 @@
 	</calendar>
 
 	<action-method
-		name="action.event.calulate.event.summary.fields">
+		name="action-event-calulate-event-summary-fields">
 		<call class="com.axelor.event.web.EventController"
 			method="calculateEventSummaryFields" />
 	</action-method>
 
-	<action-record name="action.event.total.entry"
+	<action-method
+		name="action-event-check-email-send">
+		<call class="com.axelor.event.web.EventController"
+			method="checkMailSend" />
+	</action-method>
+	
+	<action-record name="action-event-total-entry"
 		model="com.axelor.event.db.Event">
 		<field name="totalEntry"
 			expr="eval: eventRegistrationList.size()" />
 	</action-record>
 
 	<action-condition
-		name="action.check.condition.on.new.registration">
+		name="action-check-condition-on-new-registration">
 		<check field="capacity"
 			if="evenRegistrationList != null &amp;&amp; eventRegistrationList.size() &gt; capacity"
 			error="Increase the Capacity to register more" />
 	</action-condition>
 
 	<action-validate
-		name="action.check.validation.on.new.registration">
+		name="action-check-validation-on-new-registration">
 		<error
 			message="Registration is full :) Check Capacity and total Entry"
 			if="evenRegistrationList != null &amp;&amp; eventRegistrationList.size() &gt; capacity" />
 	</action-validate>
 
-	<action-report name="print.event.report"
+	<action-report name="print-event-report"
 		design="event.rptdesign" output="event-${date}${time}" format="pdf">
 		<param name="eventId" expr="eval: id" />
 	</action-report>
 
 	<action-validate
-		name="action.check.validation.on.event.dates">
+		name="action-check-validation-on-event-dates">
 		<error message="Start date cannot be after the End date "
 			if="endDate != null &amp;&amp; startDate.isAfter(endDate)" />
 		<error message="End date cannot be before the Start date "

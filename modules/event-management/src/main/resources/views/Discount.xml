@@ -15,13 +15,13 @@
 		<panel title="Fill all Details">
 			<field name="beforeDays" />
 			<field name="discountPercent"
-				onChange="action.discount.calulate.discount.amount" />
+				onChange="action-discount-calulate-discount-amount" />
 			<field name="discountAmount" />
 		</panel>
 	</form>
 
 	<action-method
-		name="action.discount.calulate.discount.amount">
+		name="action-discount-calulate-discount-amount">
 		<call class="com.axelor.event.web.DiscountController"
 			method="calculateDiscountAmount" />
 	</action-method>

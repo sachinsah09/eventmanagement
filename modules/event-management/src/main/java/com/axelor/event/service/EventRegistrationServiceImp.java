@@ -2,7 +2,6 @@ package com.axelor.event.service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-
 import com.axelor.event.db.Discount;
 import com.axelor.event.db.EventRegistration;
 
@@ -16,12 +15,12 @@ public class EventRegistrationServiceImp implements EventRegistrationService {
 			LocalDateTime registrationDate = eventRegistration.getRegistrationDate();
 			if (registrationCloseDate != null && registrationDate != null) {
 				if (eventRegistration.getEvent().getDiscountList() != null) {
-					int temp2 = 0;
+					BigDecimal temp2 = BigDecimal.ZERO;
 					for (Discount discount : eventRegistration.getEvent().getDiscountList()) {
 						LocalDateTime discountDate = registrationCloseDate.minusDays(discount.getBeforeDays());
 						if (registrationDate.isBefore(discountDate)) {
-							int temp = discount.getBeforeDays();
-							if (temp > temp2) {
+							BigDecimal temp = discount.getDiscountAmount();
+							if (temp.max(temp2) != null) {
 								temp2 = temp;
 								amount = eventRegistration.getEvent().getEventFees()
 										.subtract(discount.getDiscountAmount());
@@ -36,4 +35,5 @@ public class EventRegistrationServiceImp implements EventRegistrationService {
 		}
 		return amount;
 	}
+
 }

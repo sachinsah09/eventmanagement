@@ -12,44 +12,45 @@
 		<field name="address" />
 		<field name="registrationDate" />
 		<field name="amount" />
+		<field name="isMailSend"/>
 	</grid>
 
 	<form name="event-registration-form"
 		title="Event-Registration-Form"
 		model="com.axelor.event.db.EventRegistration"
-		onLoad="action.event.registration.calculate.amount"
-		onSave="action.event.registration.calculate.amount"
-		onNew="set.event.record,action.event.registration.hide.event">
+		onSave="action-event-registration-calculate-amount"
+		onNew="set-event-record,action-event-registration-hide-event">
 		<panel title="Fill all Details">
 			<field name="event"
-				onChange="action.event.registration.validate.capacity,action.record.event.registration.set.amount.value" />
-			<field name="name" onChange="action.event.registration.validate.capacity"/>
+				onChange="action-event-registration-validate-capacity,action-record-event-registration-set-amount-value" />
+			<field name="name" onChange="action-event-registration-validate-capacity"/>
 			<field name="email" placeholder="something@example.com"
 				pattern="^[a-z0-9A-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9A-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,})$" />
 			<field name="address" />
 			<field name="registrationDate"
-				onChange="action.event.registration.validate.capacity,action.check.validation.on.date,action.event.registration.calculate.amount" />
+				onChange="action-event-registration-validate-capacity,action-check-validation-on-date,action-event-registration-calculate-amount" />
 			<field name="amount" />
+			<field name="isMailSend"/>
 		</panel>
 	</form>
 
-	<action-record name="set.event.record"
+	<action-record name="set-event-record"
 		model="com.axelor.event.db.EventRegistration">
 		<field name="event" expr="eval: __parent__"
 			if="!(__ref__ instanceof Event)" />
 	</action-record>
 
-	<action-attrs name="action.event.registration.hide.event">
+	<action-attrs name="action-event-registration-hide-event">
 		<attribute name="hidden" for="event" expr="eval: __parent__" />
 	</action-attrs>
 
 	<action-method
-		name="action.event.registration.calculate.amount">
+		name="action-event-registration-calculate-amount">
 		<call class="com.axelor.event.web.EventRegistrationController"
 			method="calculateAmount" />
 	</action-method>
 
-	<action-validate name="action.check.validation.on.date">
+	<action-validate name="action-check-validation-on-date">
 		<error
 			message="Registration date cannot be before Registration open date"
 			if="event != null &amp;&amp; registrationDate &lt;event.registrationOpen" />
@@ -58,13 +59,13 @@
 			if="event != null &amp;&amp; registrationDate &gt;event.registrationClose" />
 	</action-validate>
 
-	<action-validate name="action.event.registration.validate.capacity">
+	<action-validate name="action-event-registration-validate-capacity">
 		<error message="Registration is full :). Sorry for Inconvience"
 			if=" event != null &amp;&amp; event.totalEntry &gt;= event.capacity" />
 	</action-validate>
 
 	<action-record
-		name="action.record.event.registration.set.amount.value"
+		name="action-record-event-registration-set-amount-value"
 		model="com.axelor.event.db.EventRegistration">
 		<field name="amount" expr="eval: event.eventFees"
 			if="event != null" />

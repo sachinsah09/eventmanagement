@@ -17,12 +17,14 @@
  */
 package com.axelor.event;
 
+import java.io.IOException;
+
 import com.axelor.data.csv.CSVImporter;
 
 public class Test {
 
   @org.junit.Test
-  public void test() {
+  public void test() throws IOException {
     CSVImporter importer = new CSVImporter("data-init/input-config.xml", "data-init/input");
     importer.run();
   }

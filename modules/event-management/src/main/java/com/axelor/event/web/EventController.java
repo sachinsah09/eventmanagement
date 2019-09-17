@@ -1,11 +1,14 @@
 package com.axelor.event.web;
 
 import com.axelor.event.db.Event;
+import com.axelor.event.db.EventRegistration;
 import com.axelor.event.service.EventService;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 import com.google.inject.Inject;
 import java.lang.invoke.MethodHandles;
+import java.math.BigDecimal;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,4 +29,12 @@ public class EventController {
 			response.setError("Something went wrong ! please try again");
 		}
 	}
+	
+	public void checkMailSend(ActionRequest request, ActionResponse response) {
+		Event event = request.getContext().asType(Event.class);
+		
+			 event = eventService.checkMailSend(event);
+			response.setValues(event);;
+			}
+	
 }

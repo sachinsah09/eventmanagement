@@ -29,7 +29,6 @@ public class EventServiceImp implements EventService {
 			}
 			event.setTotatDiscount(totalDiscount);
 		}
-
 		return event;
 	}
 }

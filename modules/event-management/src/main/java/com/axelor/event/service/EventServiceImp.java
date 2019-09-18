@@ -1,15 +1,9 @@
 package com.axelor.event.service;
 
 import java.math.BigDecimal;
-import java.util.List;
-
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import com.axelor.apps.message.db.EmailAddress;
-import com.axelor.apps.message.db.Message;
 import com.axelor.apps.message.db.repo.EmailAddressRepository;
-import com.axelor.apps.message.db.repo.MessageRepository;
-import com.axelor.db.JPA;
 import com.axelor.event.db.Event;
 import com.axelor.event.db.EventRegistration;
 import com.axelor.inject.Beans;

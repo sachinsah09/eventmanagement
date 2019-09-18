@@ -12,25 +12,25 @@
 		<field name="address" />
 		<field name="registrationDate" />
 		<field name="amount" />
-		<field name="isMailSend"/>
+		<field name="isMailSend" />
 	</grid>
 
 	<form name="event-registration-form"
 		title="Event-Registration-Form"
 		model="com.axelor.event.db.EventRegistration"
-		onSave="action-event-registration-calculate-amount"
+		onSave="action-event-registration-validate-capacity,action-check-validation-on-date,action-event-registration-calculate-amount"
 		onNew="set-event-record,action-event-registration-hide-event">
 		<panel title="Fill all Details">
 			<field name="event"
 				onChange="action-event-registration-validate-capacity,action-record-event-registration-set-amount-value" />
-			<field name="name" onChange="action-event-registration-validate-capacity"/>
+			<field name="name" />
 			<field name="email" placeholder="something@example.com"
 				pattern="^[a-z0-9A-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9A-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,})$" />
 			<field name="address" />
 			<field name="registrationDate"
 				onChange="action-event-registration-validate-capacity,action-check-validation-on-date,action-event-registration-calculate-amount" />
 			<field name="amount" />
-			<field name="isMailSend"/>
+			<field name="isMailSend" />
 		</panel>
 	</form>
 
@@ -59,7 +59,8 @@
 			if="event != null &amp;&amp; registrationDate &gt;event.registrationClose" />
 	</action-validate>
 
-	<action-validate name="action-event-registration-validate-capacity">
+	<action-validate
+		name="action-event-registration-validate-capacity">
 		<error message="Registration is full :). Sorry for Inconvience"
 			if=" event != null &amp;&amp; event.totalEntry &gt;= event.capacity" />
 	</action-validate>

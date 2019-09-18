@@ -21,7 +21,7 @@
 	</grid>
 
 	<form name="event-form" title="Event-Form"
-		onSave="action-check-validation-on-new-registration,action-check-condition-on-new-registration,action-event-calulate-event-summary-fields,action-event-check-email-send"
+		onSave="action-event-total-entry,action-check-validation-on-new-registration,action-check-condition-on-new-registration,action-event-calulate-event-summary-fields,action-event-check-email-send"
 		model="com.axelor.event.db.Event">
 		<toolbar>
 			<button name="importRegistration" title="Import registration"
@@ -81,7 +81,7 @@
         Event No.<strong>{{reference}}</strong><br>
          <abbr ng-if="startDate" title="startDate">Start Date:</abbr><strong> {{startDate}}</strong><br>
          <abbr ng-if="endDate" title="endDate">End Date:</abbr><strong> {{endDate}}</strong><br>
-          Venue:<strong> {{venue}}</strong><br>
+          Venue:<strong> {{venue.fullName}}</strong><br>
     	  Capacity:<strong> {{capacity}}</strong><br>
     	  Event Fees:<strong> {{eventFees}}</strong><br>
     	</div>
@@ -129,12 +129,11 @@
 			method="calculateEventSummaryFields" />
 	</action-method>
 
-	<action-method
-		name="action-event-check-email-send">
+	<action-method name="action-event-check-email-send">
 		<call class="com.axelor.event.web.EventController"
 			method="checkMailSend" />
 	</action-method>
-	
+
 	<action-record name="action-event-total-entry"
 		model="com.axelor.event.db.Event">
 		<field name="totalEntry"
@@ -152,7 +151,7 @@
 		name="action-check-validation-on-new-registration">
 		<error
 			message="Registration is full :) Check Capacity and total Entry"
-			if="evenRegistrationList != null &amp;&amp; eventRegistrationList.size() &gt; capacity" />
+			if="totalEntry != null &amp;&amp; totalEntry &gt; capacity" />
 	</action-validate>
 
 	<action-report name="print-event-report"

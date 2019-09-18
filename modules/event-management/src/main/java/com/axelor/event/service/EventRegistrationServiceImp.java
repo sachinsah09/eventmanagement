@@ -10,22 +10,19 @@ public class EventRegistrationServiceImp implements EventRegistrationService {
 	@Override
 	public BigDecimal calculateAmount(EventRegistration eventRegistration) {
 		BigDecimal amount = BigDecimal.ZERO;
-		if (eventRegistration.getEvent() != null) {
+		if (eventRegistration.getEvent() != null && eventRegistration.getEvent().getRegistrationClose() != null
+				&& eventRegistration.getRegistrationDate() != null
+				&& eventRegistration.getEvent().getDiscountList() != null) {
 			LocalDateTime registrationCloseDate = eventRegistration.getEvent().getRegistrationClose();
 			LocalDateTime registrationDate = eventRegistration.getRegistrationDate();
-			if (registrationCloseDate != null && registrationDate != null) {
-				if (eventRegistration.getEvent().getDiscountList() != null) {
-					BigDecimal temp2 = BigDecimal.ZERO;
-					for (Discount discount : eventRegistration.getEvent().getDiscountList()) {
-						LocalDateTime discountDate = registrationCloseDate.minusDays(discount.getBeforeDays());
-						if (registrationDate.isBefore(discountDate)) {
-							BigDecimal temp = discount.getDiscountAmount();
-							if (temp.max(temp2) != null) {
-								temp2 = temp;
-								amount = eventRegistration.getEvent().getEventFees()
-										.subtract(discount.getDiscountAmount());
-							}
-						}
+			BigDecimal temp2 = BigDecimal.ZERO;
+			for (Discount discount : eventRegistration.getEvent().getDiscountList()) {
+				LocalDateTime discountDate = registrationCloseDate.minusDays(discount.getBeforeDays());
+				if (registrationDate.isBefore(discountDate)) {
+					BigDecimal temp = discount.getDiscountAmount();
+					if (temp.max(temp2) != null) {
+						temp2 = temp;
+						amount = eventRegistration.getEvent().getEventFees().subtract(discount.getDiscountAmount());
 					}
 				}
 			}

@@ -9,6 +9,8 @@ import com.axelor.event.service.EventRegistrationService;
 import com.axelor.event.service.EventRegistrationServiceImp;
 import com.axelor.event.service.EventService;
 import com.axelor.event.service.EventServiceImp;
+import com.axelor.event.service.ImportEventRegistrationService;
+import com.axelor.event.service.ImportEventRegistrationServiceImp;
 
 public class Module extends AxelorModule {
 	protected void configure() {
@@ -16,5 +18,6 @@ public class Module extends AxelorModule {
 		bind(EventService.class).to(EventServiceImp.class);
 		bind(EventRegistrationService.class).to(EventRegistrationServiceImp.class);
 		bind(MessageServiceImpl.class).to(EventMessagServiceImp.class);
+		bind(ImportEventRegistrationService.class).to(ImportEventRegistrationServiceImp.class);
 	}
 }

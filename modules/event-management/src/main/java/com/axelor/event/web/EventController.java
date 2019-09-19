@@ -12,7 +12,6 @@ import java.math.BigDecimal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 public class EventController {
 
 	@Inject
@@ -29,5 +28,5 @@ public class EventController {
 			response.setError("Something went wrong ! please try again");
 		}
 	}
-	
+
 }

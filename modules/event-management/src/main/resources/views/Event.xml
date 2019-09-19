@@ -21,7 +21,7 @@
 	</grid>
 
 	<form name="event-form" title="Event-Form"
-		onSave="action-event-total-entry,action-check-validation-on-new-registration,action-check-condition-on-new-registration,action-event-calulate-event-summary-fields,action-event-check-email-send"
+		onSave="action-event-total-entry,action-check-validation-on-new-registration,action-check-condition-on-new-registration,action-event-calulate-event-summary-fields"
 		model="com.axelor.event.db.Event">
 		<toolbar>
 			<button name="importRegistration" title="Import registration"

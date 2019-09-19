@@ -30,7 +30,7 @@
 			<button name="print Report" title="Print Report"
 				icon="fa-print" readonlyIf="id == null" onClick="print-event-report" />
 			<button name="sendMail" title="send Mail" icon="fa-envelope"
-				onClick="action-send-by-email-with-template,action-event-check-email-send" />
+				onClick="action-event-send-email" />
 		</toolbar>
 		<panel title="Fill all Details">
 			<field name="reference" onChange="" />
@@ -128,16 +128,17 @@
 		<call class="com.axelor.event.web.EventController"
 			method="calculateEventSummaryFields" />
 	</action-method>
-
-	<action-method name="action-event-check-email-send">
-		<call class="com.axelor.event.web.EventController"
-			method="checkMailSend" />
+	
+	<action-method name="action-event-send-email">
+		<call class="com.axelor.event.web.EventMessageController"
+			method="sendMessageAll" />
 	</action-method>
 
 	<action-record name="action-event-total-entry"
 		model="com.axelor.event.db.Event">
 		<field name="totalEntry"
-			expr="eval: eventRegistrationList.size()" />
+			expr="eval: eventRegistrationList.size()" if="eventRegistrationList == null" />
+		<field name="totalEntry" expr="0" if="eventRegistrationList == null"/>	
 	</action-record>
 
 	<action-condition

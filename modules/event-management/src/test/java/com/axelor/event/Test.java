@@ -17,13 +17,14 @@
  */
 package com.axelor.event;
 
+import com.axelor.data.Importer;
 import com.axelor.data.csv.CSVImporter;
 
 public class Test {
 
 	@org.junit.Test
 	public void test() {
-		CSVImporter importer = new CSVImporter("data-init/input-config.xml", "data-init/input");
+		Importer importer = new CSVImporter("data-init/input-config.xml", "data-init/input");
 		importer.run();
 	}
 }

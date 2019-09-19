@@ -65,7 +65,7 @@ public class GenerateMessageController {
 
     Query<? extends Template> templateQuery =
         templateRepo.all().filter("self.metaModel.fullName = ?1 AND self.isSystem != true", model);
-
+    
     try {
 
       long templateNumber = templateQuery.count();
@@ -97,8 +97,15 @@ public class GenerateMessageController {
                 .map());
 
       } else {
-        response.setView(
-            generateMessage(context.getId(), model, simpleModel, templateQuery.fetchOne()));
+    	  response.setView(
+    	            ActionView.define(I18n.get(IExceptionMessage.MESSAGE_2))
+    	                .model(Wizard.class.getName())
+    	                .add("form", "generate-message-wizard-form")
+    	                .param("show-confirm", "false")
+    	                .context("_objectId", context.getId().toString())
+    	                .context("_templateContextModel", model)
+    	                .context("_tag", simpleModel)
+    	                .map());      
       }
 
     } catch (Exception e) {

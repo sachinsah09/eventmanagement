@@ -105,8 +105,7 @@ public class MailServiceMessageImpl extends MailServiceImpl {
     }
 
     final String filter = Joiner.on(" AND ").join(where);
-    final Query<EmailAddress> query = Query.of(EmailAddress.class);
-
+    final Query<EmailAddress> query = Query.of(EmailAddress.class);    
     if (!isBlank(filter)) {
       query.filter(filter);
       query.bind(params);

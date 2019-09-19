@@ -1,8 +1,10 @@
 package com.axelor.event.module;
 
 import com.axelor.app.AxelorModule;
+import com.axelor.apps.message.service.MessageServiceImpl;
 import com.axelor.event.service.DiscountService;
 import com.axelor.event.service.DiscountServiceImp;
+import com.axelor.event.service.EventMessagServiceImp;
 import com.axelor.event.service.EventRegistrationService;
 import com.axelor.event.service.EventRegistrationServiceImp;
 import com.axelor.event.service.EventService;
@@ -13,5 +15,6 @@ public class Module extends AxelorModule {
 		bind(DiscountService.class).to(DiscountServiceImp.class);
 		bind(EventService.class).to(EventServiceImp.class);
 		bind(EventRegistrationService.class).to(EventRegistrationServiceImp.class);
+		bind(MessageServiceImpl.class).to(EventMessagServiceImp.class);
 	}
 }

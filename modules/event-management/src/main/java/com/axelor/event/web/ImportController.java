@@ -19,7 +19,7 @@ public class ImportController {
 			response.setError("Please select CSV File Type");
 		} else {
 			System.out.println(dataFile.getFileName());
-			CSVImporter importer = new CSVImporter("*/data-init/registration-config.xml", "*/data-init/input");
+			CSVImporter importer = new CSVImporter("data-import/csv-config.xml", "data-import/csv");
 			importer.run();
 		}
 	}

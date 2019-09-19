@@ -39,22 +39,4 @@ public class EventServiceImp implements EventService {
 		}
 		return event;
 	}
-
-	@Transactional
-	@Override
-	public Event checkMailSend(Event event) {
-		for (EventRegistration eventRegistration : event.getEventRegistrationList()) {
-			Boolean isSend = false;
-			String email = eventRegistration.getEmail();
-			EmailAddress emailAddress = Beans.get(EmailAddressRepository.class).all().filter("self.address = ?", email)
-					.fetchOne();
-			if (emailAddress != null) {
-				isSend = true;
-			} else {
-				isSend = false;
-			}
-			eventRegistration.setIsMailSend(isSend);
-		}
-		return event;
-	}
 }

@@ -30,11 +30,4 @@ public class EventController {
 		}
 	}
 	
-	public void checkMailSend(ActionRequest request, ActionResponse response) {
-		Event event = request.getContext().asType(Event.class);
-		
-			 event = eventService.checkMailSend(event);
-			response.setValues(event);;
-			}
-	
 }

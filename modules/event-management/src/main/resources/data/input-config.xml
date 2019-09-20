@@ -10,7 +10,7 @@
 	</adapter>
 
 	<input file="registration.csv"
-		type="com.axelor.event.db.EventRegistration">
+		type="com.axelor.event.db.EventRegistration" update="true">
 		<bind to="event" column="event" search="event.id = eventId" />
 		<bind to="name" column="name" />
 		<bind to="email" column="email" />

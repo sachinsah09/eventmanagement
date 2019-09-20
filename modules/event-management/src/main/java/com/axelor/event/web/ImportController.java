@@ -9,6 +9,7 @@ import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 import com.google.common.io.Files;
 import com.google.inject.Inject;
+import com.google.inject.persist.Transactional;
 
 public class ImportController {
 
@@ -16,6 +17,7 @@ public class ImportController {
 	ImportEventRegistrationService service;
 
 	@SuppressWarnings("unchecked")
+	@Transactional
 	public void importRegistration(ActionRequest request, ActionResponse response) {
 		LinkedHashMap<String, Object> map = (LinkedHashMap<String, Object>) request.getContext().get("metaFile");
 		MetaFile dataFile = Beans.get(MetaFileRepository.class).find(((Integer) map.get("id")).longValue());
@@ -24,7 +26,7 @@ public class ImportController {
 			response.setError("Please select CSV File Type");
 		} else {
 			service.importRegistrationCsv(dataFile, id);
-			response.setFlash("Registrations imported  successfully!!");
+			response.setNotify("Registrations imported  successfully!!");
 		}
 	}
 }

@@ -1,8 +1,6 @@
 package com.axelor.event.web;
 
 import java.math.BigDecimal;
-
-import com.axelor.event.db.Event;
 import com.axelor.event.db.EventRegistration;
 import com.axelor.event.service.EventRegistrationService;
 import com.axelor.rpc.ActionRequest;

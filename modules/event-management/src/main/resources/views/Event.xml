@@ -89,7 +89,7 @@
 	</cards>
 
 	<form name="wizard-import-registration-form"
-		title="Import Registration" model="com.axelor.event.db.Event">
+		title="Import Registration" model="com.axelor.event.db.Event" >
 		<panel name="wizardPanel">
 			<field name="metaFile" title="Input file" type="many-to-one"
 				target="com.axelor.meta.db.MetaFile" widget="binary-link" />

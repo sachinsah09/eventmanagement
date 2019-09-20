@@ -3,16 +3,31 @@ package com.axelor.event.service;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.apache.commons.io.IOUtils;
 import com.axelor.data.Importer;
 import com.axelor.data.csv.CSVImporter;
+import com.axelor.event.db.Event;
+import com.axelor.event.db.EventRegistration;
+import com.axelor.event.db.repo.EventRepository;
+import com.axelor.inject.Beans;
 import com.axelor.meta.MetaFiles;
 import com.axelor.meta.db.MetaFile;
 import com.google.common.io.Files;
+import com.google.inject.Inject;
 
 public class ImportEventRegistrationServiceImp implements ImportEventRegistrationService {
+
+	@Inject
+	EventRegistrationService service;
+	@Inject
+	EventRegistrationService eventRegistrationService;
+	@Inject
+	EventService eventService;
 
 	public void importRegistrationCsv(MetaFile dataFile, Integer id) {
 		File configXmlFile = this.getConfigXmlFile();
@@ -22,6 +37,13 @@ public class ImportEventRegistrationServiceImp implements ImportEventRegistratio
 		Importer importer = new CSVImporter(configXmlFile.getAbsolutePath(), csvFile.getParent().toString() + "/");
 		importer.setContext(context);
 		importer.run();
+	
+		Event event = Beans.get(EventRepository.class).all().filter("self.id = ?", id).fetchOne();
+		for (EventRegistration eventRegistration : event.getEventRegistrationList()) {
+			BigDecimal amount = eventRegistrationService.calculateAmount(eventRegistration);
+			eventRegistration.setAmount(amount);
+		}
+		event = eventService.calculateEventSummaryFields(event);
 	}
 
 	private File getConfigXmlFile() {

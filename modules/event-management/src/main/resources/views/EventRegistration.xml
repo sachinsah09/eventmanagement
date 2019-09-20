@@ -30,7 +30,7 @@
 			<field name="registrationDate"
 				onChange="action-event-registration-validate-capacity,action-check-validation-on-date,action-event-registration-calculate-amount" />
 			<field name="amount" />
-			<field name="isMailSend" />
+			<field name="isMailSend" readonly="true"/>
 		</panel>
 	</form>
 

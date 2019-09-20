@@ -8,21 +8,20 @@ import java.util.Map;
 import org.apache.commons.io.IOUtils;
 import com.axelor.data.Importer;
 import com.axelor.data.csv.CSVImporter;
+import com.axelor.meta.MetaFiles;
 import com.axelor.meta.db.MetaFile;
+import com.google.common.io.Files;
 
 public class ImportEventRegistrationServiceImp implements ImportEventRegistrationService {
 
 	public void importRegistrationCsv(MetaFile dataFile, Integer id) {
-
 		File configXmlFile = this.getConfigXmlFile();
 		Map<String, Object> context = new HashMap<String, Object>();
-		context.put("_event_id", id);
-		Importer importer = new CSVImporter(configXmlFile.getAbsolutePath(),
-				"/home/axelor/Task-Project/Event-Project/event-management-app/modules/event-management/src/main/resources/data/input/");
-
+		context.put("eventId", id);
+		File csvFile = getDataCsvFile(dataFile);
+		Importer importer = new CSVImporter(configXmlFile.getAbsolutePath(), csvFile.getParent().toString() + "/");
 		importer.setContext(context);
 		importer.run();
-
 	}
 
 	private File getConfigXmlFile() {
@@ -38,5 +37,17 @@ public class ImportEventRegistrationServiceImp implements ImportEventRegistratio
 			e.printStackTrace();
 		}
 		return configFile;
+	}
+
+	private File getDataCsvFile(MetaFile dataFile) {
+		File csvFile = null;
+		try {
+			File tempDir = Files.createTempDir();
+			csvFile = new File(tempDir, "registration.csv");
+			Files.copy(MetaFiles.getPath(dataFile).toFile(), csvFile);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return csvFile;
 	}
 }

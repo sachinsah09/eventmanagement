@@ -38,13 +38,10 @@ public class EventMessagServiceImp extends MessageServiceImpl {
 		}
 		EmailAccount mailAccount = Beans.get(EmailAccountRepository.class).all().filter("self.isDefault=true")
 				.fetchOne();
-		System.out.println(mailAccount);
 		EmailAddress fromEmailAddress = Beans.get(EmailAddressRepository.class).all().filter("self.id=38").fetchOne();
-		System.out.println(fromEmailAddress);
 		Message message = new Message(2, "you are registered", "thank you for the registration", 2, 2,
 				"ssa.axelor@gmail.com", fromEmailAddress, emailAddressSet, emailAddressSet, null, null, sentByEmail,
 				mailAccount);
-		System.out.println(message);
 		sendMessage(message);
 	}
 }

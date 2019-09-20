@@ -1,2 +1,2 @@
-"name","email"
-"man","sachinsah@engineer.com"
+event.id,name,email,address.country,registrationDate,amount,isMailSend
+3,man,sachinsah@engineer.com,India,20/08/1994 00:00,600,true

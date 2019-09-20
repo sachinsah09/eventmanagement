@@ -137,7 +137,7 @@
 	<action-record name="action-event-total-entry"
 		model="com.axelor.event.db.Event">
 		<field name="totalEntry"
-			expr="eval: eventRegistrationList.size()" if="eventRegistrationList == null" />
+			expr="eval: eventRegistrationList.size()" if="eventRegistrationList != null" />
 		<field name="totalEntry" expr="0" if="eventRegistrationList == null"/>	
 	</action-record>
 

@@ -9,7 +9,7 @@
 		<option name="format" value="dd/MM/yyyy HH:mm" />
 	</adapter>
 	<input file="registration.csv"
-		type="com.axelor.event.db.EventRegistration" >
+		type="com.axelor.event.db.EventRegistration"  call="com.axelor.event.service.ImportRegistration:importRegistration">
 		<bind to="event" eval="eventPass" update="true"  />
 		<bind to="name" column="name" />
 		<bind to="email" column="email" />

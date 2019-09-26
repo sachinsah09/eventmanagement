@@ -22,13 +22,11 @@ public class EventMessagServiceImp extends MessageServiceImpl {
 	public EventMessagServiceImp(MetaAttachmentRepository metaAttachmentRepository,
 			MessageRepository messageRepository) {
 		super(metaAttachmentRepository, messageRepository);
-		// TODO Auto-generated constructor stub
 	}
 
-	@SuppressWarnings("null")
 	public void sendMessageAll(Event event) throws AxelorException {
 		Boolean sentByEmail = true;
-		Set<EmailAddress> emailAddressSet = new HashSet();
+		Set<EmailAddress> emailAddressSet = new HashSet<EmailAddress>();
 		for (EventRegistration eventRegistration : event.getEventRegistrationList()) {
 			if (eventRegistration.getIsMailSend() != true) {
 				EmailAddress emailAddress = new EmailAddress(eventRegistration.getEmail());

@@ -25,7 +25,7 @@
 		model="com.axelor.event.db.Event">
 		<toolbar>
 			<button name="importRegistration" title="Import registration"
-				icon="fa-print" readonlyIf="id == null"
+				icon="fa-print" readonlyIf="id == null"  
 				onClick="action-base-view-import-registration-popup" />
 			<button name="print Report" title="Print Report"
 				icon="fa-print" readonlyIf="id == null" onClick="print-event-report" />
@@ -55,7 +55,7 @@
 		</panel-related>
 
 		<panel-related field="eventRegistrationList"
-			onChange="action-check-validation-on-new-registration,action-check-condition-on-new-registration,action-event-calulate-event-summary-fields" />
+			onChange="action-check-validation-on-new-registration,action-check-condition-on-new-registration,action-event-calulate-event-summary-fields"/>
 		<panel sidebar="true" title="Event Summary">
 			<field name="totalEntry" />
 			<field name="amountCollected" />

@@ -30,7 +30,7 @@
 			<field name="registrationDate"
 				onChange="action-event-registration-validate-capacity,action-check-validation-on-date,action-event-registration-calculate-amount" />
 			<field name="amount" />
-			<field name="isMailSend" readonly="true"/>
+			<field name="isMailSend" readonly="true" />
 		</panel>
 	</form>
 
@@ -52,11 +52,13 @@
 
 	<action-validate name="action-check-validation-on-date">
 		<error
-			message="Registration date cannot be before Registration open date"
-			if="event != null &amp;&amp; registrationDate &lt;event.registrationOpen" />
+	message="Registration date cannot be before Registration open date"
+	if="event != null &amp;&amp; registrationDate &lt;event.registrationOpen"
+	action="action-record-event-registration-set-registration.date.value.null" />
 		<error
 			message="Registartion date cannot be after Registration close date"
-			if="event != null &amp;&amp; registrationDate &gt;event.registrationClose" />
+			if="event != null &amp;&amp; registrationDate &gt;event.registrationClose"
+			action="action-record-event-registration-set-registration.date.value.null" />
 	</action-validate>
 
 	<action-validate
@@ -64,6 +66,13 @@
 		<error message="Registration is full :). Sorry for Inconvience"
 			if=" event != null &amp;&amp; event.totalEntry &gt;= event.capacity" />
 	</action-validate>
+
+	<action-record
+		name="action-record-event-registration-set-registration.date.value.null"
+		model="com.axelor.event.db.EventRegistration">
+		<field name="registrationDate" expr="eval: null"
+			if="event != null" />
+	</action-record>
 
 	<action-record
 		name="action-record-event-registration-set-amount-value"

@@ -8,16 +8,13 @@
 		<option name="type" value="LocalDateTime" />
 		<option name="format" value="dd/MM/yyyy HH:mm" />
 	</adapter>
-
 	<input file="registration.csv"
-		type="com.axelor.event.db.EventRegistration" update="true">
-		<bind to="event" column="event" search="event.id = eventId" />
+		type="com.axelor.event.db.EventRegistration" >
+		<bind to="event" eval="eventPass" update="true"  />
 		<bind to="name" column="name" />
 		<bind to="email" column="email" />
 		<bind to="registrationDate" column="registrationDate"
 			adapter="LocalDateTime" />
 	</input>
-
-
 </csv-inputs>
 	

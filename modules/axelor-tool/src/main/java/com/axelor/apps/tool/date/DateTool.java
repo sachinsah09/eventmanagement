@@ -63,7 +63,7 @@ public class DateTool {
     }
   }
 
-  private static int days360Between(LocalDate startDate, LocalDate endDate) {
+  public static int days360Between(LocalDate startDate, LocalDate endDate) {
 
     int nbDayOfFirstMonth = 0;
     int nbDayOfOthersMonths = 0;

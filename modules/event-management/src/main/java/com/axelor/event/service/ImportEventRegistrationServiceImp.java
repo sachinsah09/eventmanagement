@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import org.apache.commons.io.IOUtils;
 import com.axelor.data.Importer;
@@ -32,17 +30,22 @@ public class ImportEventRegistrationServiceImp implements ImportEventRegistratio
 	public void importRegistrationCsv(MetaFile dataFile, Integer id) {
 		File configXmlFile = this.getConfigXmlFile();
 		Map<String, Object> context = new HashMap<String, Object>();
-		context.put("eventId", id);
-		File csvFile = getDataCsvFile(dataFile);
-		Importer importer = new CSVImporter(configXmlFile.getAbsolutePath(), csvFile.getParent().toString() + "/");
-		importer.setContext(context);
-		importer.run();
-	
-		Event event = Beans.get(EventRepository.class).all().filter("self.id = ?", id).fetchOne();
+		Event event;
+		event = Beans.get(EventRepository.class).all().filter("self.id = ?", id).fetchOne();
+		context.put("eventPass", event);
+
+		if (event.getTotalEntry() < event.getCapacity()) {
+			File csvFile = getDataCsvFile(dataFile);
+			Importer importer = new CSVImporter(configXmlFile.getAbsolutePath(), csvFile.getParent().toString());
+			importer.setContext(context);
+			importer.run();
+		}
+		event = Beans.get(EventRepository.class).all().filter("self.id = ?", id).fetchOne();
 		for (EventRegistration eventRegistration : event.getEventRegistrationList()) {
 			BigDecimal amount = eventRegistrationService.calculateAmount(eventRegistration);
 			eventRegistration.setAmount(amount);
 		}
+		event.setTotalEntry(event.getEventRegistrationList().size());
 		event = eventService.calculateEventSummaryFields(event);
 	}
 

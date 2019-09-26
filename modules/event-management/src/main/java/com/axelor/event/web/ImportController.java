@@ -15,9 +15,8 @@ public class ImportController {
 
 	@Inject
 	ImportEventRegistrationService service;
-
+	
 	@SuppressWarnings("unchecked")
-	@Transactional
 	public void importRegistration(ActionRequest request, ActionResponse response) {
 		LinkedHashMap<String, Object> map = (LinkedHashMap<String, Object>) request.getContext().get("metaFile");
 		MetaFile dataFile = Beans.get(MetaFileRepository.class).find(((Integer) map.get("id")).longValue());
@@ -28,5 +27,6 @@ public class ImportController {
 			service.importRegistrationCsv(dataFile, id);
 			response.setNotify("Registrations imported  successfully!!");
 		}
+		
 	}
 }
